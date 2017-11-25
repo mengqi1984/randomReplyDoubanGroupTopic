@@ -32,11 +32,15 @@ g_my_groups = ['https://www.douban.com/group/beijing/', 'https://www.douban.com/
 def reconstructHeaders():
     #change link address
     # select on link from my groups
-    link_address = choice(g_my_groups) + 'discussion'
+    global link_address
+    global headers
+
     headers['Referer'] = link_address
+    link_address = choice(g_my_groups) + 'discussion'
 
     print (link_address)
     print (headers)
+
 
 def autoreply_douban_links(topic_address):
     #randomly choose a comment to reply
