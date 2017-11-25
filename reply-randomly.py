@@ -65,6 +65,9 @@ def getAllTopicLinks(page = 50):
         print ('检测到有异常请求从你的 IP 发出, cookie超时')
         send_message(["27130723@qq.com"], "douban-cookie超时", 'douban-cookie超时')
         exit()
+    
+    #clear topics cache
+    g_topics_cache[:] = []
 
     for tr in soup.find_all('tr'):
         # print tr 
@@ -82,8 +85,6 @@ def getAllTopicLinks(page = 50):
             if tr_topic in g_topics_cache:
                 pass
             else:
-                #clear it
-                g_topics_cache[:] = []
                 #cache it
                 g_topics_cache.append(tr_topic)
         else:
