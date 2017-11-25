@@ -100,7 +100,7 @@ def loopTask():
             getAllTopicLinks()
             print (g_topics_cache)
 
-            durations = [1,2,1,2,1,2,1]  # reply durations
+            durations = [10,20]  # reply durations
             for duration in durations:
                 #random choose a topic to reply
                 reply_topic_link = choice(g_topics_cache)
